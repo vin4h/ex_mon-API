@@ -1,5 +1,5 @@
 defmodule ExMonWeb.TrainerController do
-  use ExMon, :controller
+  use ExMonWeb, :controller
 
   def get_all(conn, _params) do
   end
