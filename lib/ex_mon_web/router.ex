@@ -51,6 +51,5 @@ defmodule ExMonWeb.Router do
 
     delete "/trainer/:id", TrainerController, :delete
 
-    delete
   end
 end
