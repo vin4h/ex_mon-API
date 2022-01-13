@@ -37,4 +37,20 @@ defmodule ExMonWeb.Router do
       forward "/mailbox", Plug.Swoosh.MailboxPreview
     end
   end
+
+  scope "/", ExMonWeb do 
+    pipe_through :api
+
+    get "/trainer", TrainerController, :all
+
+    get "/trainer/:id", TrainerController, :list
+
+    post "/trainer", TrainerController, :create
+
+    put "/trainer", TrainerController, :update
+
+    delete "/trainer/:id", TrainerController, :delete
+
+    delete
+  end
 end
