@@ -38,18 +38,17 @@ defmodule ExMonWeb.Router do
     end
   end
 
-  scope "/", ExMonWeb do 
+  scope "/", ExMonWeb do
     pipe_through :api
 
-    get "/trainer", TrainerController, :all
+    get "/trainer", TrainerController, :get_all
 
-    get "/trainer/:id", TrainerController, :list
+    get "/trainer/:id", TrainerController, :get_by_id
 
     post "/trainer", TrainerController, :create
 
     put "/trainer", TrainerController, :update
 
     delete "/trainer/:id", TrainerController, :delete
-
   end
 end
