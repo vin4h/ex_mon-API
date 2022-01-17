@@ -1,5 +1,7 @@
 defmodule ExMonWeb.TrainerController do
   use ExMonWeb, :controller
+  
+  alias ExMon.Trainer
 
   def get_all(conn, _params) do
   end
@@ -8,6 +10,11 @@ defmodule ExMonWeb.TrainerController do
   end
 
   def create(conn, params) do
+   {:ok, trainer} = Trainer.create_trainer(params)
+
+   conn
+   |> put.status(:created)
+   |> json(%{})
   end
 
   def update(conn, params) do
